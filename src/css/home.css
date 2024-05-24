@@ -1,0 +1,45 @@
+.swiper-wrapper {
+    position: relative
+}
+
+.item-swiper-slide {
+    margin-left : 74px;
+    width: 90%
+}
+
+.slider-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+}
+
+.slider-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+
+.bg_collection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.bg_collection_left {
+    width: 25%;
+}
+.bg_collection_right {
+    width: 70%;
+}
+
+.btn_go_some {
+    display: none !important;
+}
+
+.card_food:hover {
+    opacity: 0.5;
+}
+.card_food:hover .btn_go_some {
+    display: inline-block !important;
+}
