@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import slider from "../../image/slider.jpg";
 import Image from "react-bootstrap/Image";
@@ -15,7 +14,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Api, { endpoints } from "../../Api";
 import Pagination from "react-bootstrap/Pagination";
-import { useLocation, useNavigate, NavLink, Link } from "react-router-dom";
+import { useLocation, useNavigate, NavLink } from "react-router-dom";
 
 const Home = () => {
   const [cate, setCate] = useState([]);
@@ -41,7 +40,7 @@ const Home = () => {
 
         setFood(resFood.data.results);
 
-        console.info(resFood);
+        console.info(resFood.data.results);
       } catch (err) {
         console.log(err);
       }
