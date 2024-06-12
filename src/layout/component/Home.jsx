@@ -72,14 +72,14 @@ const Home = () => {
           <div className="slider-left">
             <ButtonGroup aria-label="Basic example">
               <Button variant="secondary">
-                <i class="fa-solid fa-arrow-left"></i>
+                <i className="fa-solid fa-arrow-left"></i>
               </Button>
             </ButtonGroup>
           </div>
           <div className="slider-right">
             <ButtonGroup aria-label="Basic example">
               <Button variant="secondary">
-                <i class="fa-solid fa-arrow-right"></i>
+                <i className="fa-solid fa-arrow-right"></i>
               </Button>
             </ButtonGroup>
           </div>
@@ -204,7 +204,7 @@ const Home = () => {
                           {/* <Card.Text>{fd.name}</Card.Text> */}
                           {fd.tags.map((t) => (
                             <Card.Text style={{ marginBottom: 0 }}>
-                              <i class="fa-solid fa-tag"></i>
+                              <i className="fa-solid fa-tag"></i>
                               {t.name}
                             </Card.Text>
                           ))}

@@ -4,12 +4,25 @@ import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/esm/Row";
+import Moment from "react-moment";
 
 const FoodDetail = () => {
   const { foodId } = useParams();
   const [foodDetail, setFoodDetail] = useState([]);
+  const [food, setFood] = useState([]);
 
   useEffect(() => {
+    const LoadFood = async () => {
+      try {
+        const resF = await Api.get(endpoints["foodId"](foodId));
+        setFood(resF.data);
+        console.log("resF", resF.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    LoadFood();
+
     const LoadFoodDetail = async () => {
       try {
         const resFD = await Api.get(endpoints["fooddetail"](foodId));
@@ -25,21 +38,23 @@ const FoodDetail = () => {
   return (
     <>
       <h1 className="text-center text-danger">CHI TIET FOODDETAIL</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <img
               style={{ height: 300, width: "100%" }}
-              src="https://res.cloudinary.com/dogosq8z4/image/upload/v1667119870/jrbes2askifkg0nmvzvz.jpg"
+              src={food.image_path}
               alt="..."
             />
           </div>
-          <div class="col-sm">
-            <div class="card-body">
-              <h5 class="card-title">name</h5>
-              <p class="card-text">fd.description</p>
-              <p class="card-text">
-                <small class="text-muted">fd.created_date</small>
+          <div className="col-sm">
+            <div className="card-body">
+              <h5 className="card-title">{food.name}</h5>
+              <p className="card-text">{food.description}</p>
+              <p className="card-text">
+                <small className="text-muted">
+                  <Moment fromNow>{food.created_date}</Moment>
+                </small>
               </p>
             </div>
           </div>
@@ -53,11 +68,12 @@ const FoodDetail = () => {
                 <Card.Img variant="top" src={fd.image_path} />
                 <Card.Body>
                   <Card.Title>{fd.name}</Card.Title>
-                  <Card.Text>{fd.created_date}</Card.Text>
+                  <Card.Text>
+                    <Moment fromNow>{fd.created_date}</Moment>
+                  </Card.Text>
                   <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
               </Card>
-              ;
             </>
           ))}
         </Row>
