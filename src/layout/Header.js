@@ -54,8 +54,8 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
         <Nav>
-          <Nav.Link href="#deets">Đăng nhập</Nav.Link>
-          <Nav.Link href="#deets">Đăng Ký</Nav.Link>
+          <Nav.Link href="/login">Đăng nhập</Nav.Link>
+          <Nav.Link href="/register">Đăng Ký</Nav.Link>
         </Nav>
       </Navbar>
     </>

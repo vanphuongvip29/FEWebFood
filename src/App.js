@@ -6,6 +6,8 @@ import Footer from "./layout/Footer";
 import Home from "./layout/component/Home";
 import MainRedux from "./Learn/Redux/MainRedux";
 import FoodDetail from "./layout/component/FoodDetail";
+import Login from "./layout/component/Login";
+import React from "react";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path="/login" element={<Login />} />
           <Route
             path="/foods/:foodId/food_fooddetail"
             element={<FoodDetail />}
