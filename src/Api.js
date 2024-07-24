@@ -4,8 +4,6 @@ import cookies from "react-cookies";
 export let endpoints = {
   categorys: "categorys/",
   foods: "foods/",
-  foodId: (fId) => `/foods/${fId}/`,
-  fooddetail: (foodId) => `/foods/${foodId}/food_fooddetail/`,
   // Lấy token
   login: "/o/token/",
   "current-user": "/users/current-user/",

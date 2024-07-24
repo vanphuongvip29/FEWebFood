@@ -1,8 +1,10 @@
-.bg-body-tertiary {
-    background-color: #fdfaf5
+.bg-body-tertiary-header {
+    background-color: pink;
+    z-index: 9999999999999;
+    position: relative; /* Ban đầu, header không cố định */
 }
 
 .logo {
-    width: 100px;
+    width: 4%;
     background-color: "blue"
 }

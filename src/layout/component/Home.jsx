@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import slider from "../../image/slider.jpg";
+import bgroung from "../../image/backgroundtrasua.jpg";
 import Image from "react-bootstrap/Image";
 import "../../css/home.css";
 import Container from "react-bootstrap/Container";
@@ -65,9 +65,11 @@ const Home = () => {
         <div className="swiper-wrapper">
           <Image
             className="item-swiper-slide"
-            src={slider}
+            style={{ height: "50%" }}
+            src={bgroung}
             alt="logo"
             rounded
+            fluid
           />
           <div className="slider-left">
             <ButtonGroup aria-label="Basic example">
@@ -85,6 +87,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <h1>THỨC UỐNG</h1>
       <br />
       <div className="bg_collection">
         <div className="bg_collection_left">
@@ -179,8 +182,6 @@ const Home = () => {
               {food.map((f) => (
                 <>
                   <Card
-                    as={NavLink}
-                    to={`foods/${f.id}/food_fooddetail/`}
                     style={{
                       width: "18rem",
                       margin: 5,
@@ -190,7 +191,7 @@ const Home = () => {
                     }}
                   >
                     <Card.Img
-                      style={{ height: "12rem" }}
+                      style={{ width: "100%" }}
                       variant="top"
                       src={f.image_path}
                     />
@@ -199,18 +200,6 @@ const Home = () => {
                       <Card.Text style={{ fontSize: 15 }}>
                         {f.description}
                       </Card.Text>
-                      {f.food_detail.map((fd) => (
-                        <>
-                          {/* <Card.Text>{fd.name}</Card.Text> */}
-                          {fd.tags.map((t) => (
-                            <Card.Text style={{ marginBottom: 0 }}>
-                              <i className="fa-solid fa-tag"></i>
-                              {t.name}
-                            </Card.Text>
-                          ))}
-                        </>
-                      ))}
-                      {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
                   </Card>
                 </>

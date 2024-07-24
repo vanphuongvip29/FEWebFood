@@ -9,6 +9,7 @@ import Api, { endpoints } from "../Api";
 import { useEffect, useState } from "react";
 
 import "../css/header.css";
+import "../js/header.js";
 
 const Header = () => {
   // const [cate, setCate] = useState([])
@@ -24,17 +25,17 @@ const Header = () => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Navbar
+        id="header"
+        collapseOnSelect
+        expand="lg"
+        className="bg-body-tertiary-header"
+      >
         <Image className="logo" src={logo} alt="logo" rounded />
         <Container>
-          <Navbar.Brand href="/">BIG FOOD</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            {/* <Nav className="me-auto">
-                        {cate.map((c)=>(<Nav.Link key={c.id} href="#features">{c.name}</Nav.Link>))}                 
-                    </Nav> */}
             <Nav className="me-auto">
-              <Nav.Link href="#features">Trang chủ</Nav.Link>
+              <Nav.Link href="/">Trang chủ</Nav.Link>
             </Nav>
             <Nav className="me-auto">
               <Nav.Link href="#features">Giới Thiệu</Nav.Link>
@@ -43,20 +44,23 @@ const Header = () => {
               <Nav.Link href="#features">Sản Phẩm</Nav.Link>
             </Nav>
             <Nav className="me-auto">
-              <Nav.Link href="#features">Khuyến Mãi</Nav.Link>
-            </Nav>
-            <Nav className="me-auto">
               <Nav.Link href="#features">Tin Tức</Nav.Link>
             </Nav>
             <Nav className="me-auto">
-              <Nav.Link href="#features">Liên Hệ</Nav.Link>
+              <Nav.Link href="#features">Cửa Hàng</Nav.Link>
+            </Nav>
+            <Nav className="me-auto">
+              <Nav.Link href="#features">Tuyển Dụng</Nav.Link>
+            </Nav>
+            <Nav className="me-auto">
+              <Nav.Link href="#features">Nhượng Quyền</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
-        <Nav>
+        {/* <Nav>
           <Nav.Link href="/login">Đăng nhập</Nav.Link>
           <Nav.Link href="/register">Đăng Ký</Nav.Link>
-        </Nav>
+        </Nav> */}
       </Navbar>
     </>
   );

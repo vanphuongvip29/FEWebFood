@@ -1,10 +1,12 @@
 .swiper-wrapper {
-    position: relative
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .item-swiper-slide {
     margin-left : 74px;
-    width: 90%
+    width: 70%;
 }
 
 .slider-left {
